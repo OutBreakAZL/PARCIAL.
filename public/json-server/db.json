@@ -1,0 +1,28 @@
+{
+  "plots": [
+    {
+      "id": "1",
+      "name": "Plot A",
+      "location": "Location 1",
+      "hectares": 5,
+      "monitoringStartDate": "2025-05-10"
+    },
+    {
+      "id": "2",
+      "name": "Plot B",
+      "location": "Location 2",
+      "hectares": 3.2,
+      "monitoringStartDate": "2030-01-15"
+    }
+  ],
+  "inspections": [
+    {
+      "id": "101",
+      "plotId": 1,
+      "observations": "Leaves show some yellowing.",
+      "recommendedActions": "Increase watering frequency.",
+      "cropStatus": "Warning",
+      "inspectionDate": "2025-05-19"
+    }
+  ]
+}

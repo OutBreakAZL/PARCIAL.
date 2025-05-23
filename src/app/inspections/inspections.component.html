@@ -1,0 +1,32 @@
+<h1>Registro de Inspección</h1>
+
+<form [formGroup]="inspectionForm" (ngSubmit)="onSubmit()" class="inspection-form">
+  <div class="form-group">
+    <label for="plotId">Plot Id</label>
+    <input id="plotId" type="text" formControlName="plotId" readonly />
+  </div>
+
+  <div class="form-group">
+    <label for="observations">Observaciones</label>
+    <input id="observations" type="text" formControlName="observations" />
+  </div>
+
+  <div class="form-group">
+    <label for="recommendedActions">Acciones Recomendadas</label>
+    <input id="recommendedActions" type="text" formControlName="recommendedActions" />
+  </div>
+
+  <div class="form-group">
+    <label for="cropStatus">Estado del Cultivo</label>
+    <select id="cropStatus" formControlName="cropStatus">
+      <option value="Good">Bueno</option>
+      <option value="Warning">Advertencia</option>
+      <option value="Critical">Crítico</option>
+    </select>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" [disabled]="inspectionForm.invalid">Registrar Inspección</button>
+    <button type="button" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>

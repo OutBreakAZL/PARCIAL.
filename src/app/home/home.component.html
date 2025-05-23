@@ -1,0 +1,36 @@
+<h1>Home</h1>
+<p>Welcome to Tend</p>
+
+<section>
+  <h2>Registered Plots</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Hectares</th>
+        <th>Inicio de Inspección</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let plot of plots">
+        <td>{{ plot.id }}</td>
+        <td>{{ plot.name }}</td>
+        <td>{{ plot.location }}</td>
+        <td>{{ plot.hectares }}</td>
+        <td>{{ plot.monitoringStartDate | date: 'short' }}</td>
+        <td>
+          <button
+            [routerLink]="['/inspections', plot.id]"
+            [disabled]="isFutureDate(plot.monitoringStartDate)">
+            Register Inspection
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
